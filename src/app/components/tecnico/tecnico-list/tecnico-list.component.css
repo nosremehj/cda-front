@@ -19,12 +19,20 @@ button{
 table {
     width: 100%;
   }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 23%;
+}
+
+.edit{
+  color: rgb(8,131,195,1);
+  margin: 0 5px 0 0
+}
+.delete{
+  color: red;
+}
