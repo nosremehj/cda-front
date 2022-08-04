@@ -1,0 +1,28 @@
+.container{
+    width: 38rem;
+    margin: auto;
+    padding: 1rem 1rem 3rem 1rem;
+    border-radius: 1rem;
+}
+.fullWidth{
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+img{
+    height: 14rem;
+    margin: auto;
+}
+.section{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+mat-icon{
+    opacity: .8;
+}
+button:nth-last-child(1){
+    margin-top: 0.50rem;
+}
+

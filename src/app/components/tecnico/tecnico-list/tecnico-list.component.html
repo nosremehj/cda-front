@@ -1,4 +1,8 @@
 <div class="container">
+  
+  <h1>Listando Técnicos</h1>
+  <button routerLink="create" class="mat-elevation-z4" id="btnewTec" mat-stroked-button color="primary">Novo técnico</button>
+
     <mat-form-field appearance="standard">
         <mat-label>Filtro</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Rafael" #input>

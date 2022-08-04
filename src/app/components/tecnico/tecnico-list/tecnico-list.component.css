@@ -3,6 +3,19 @@
     margin: auto;
 }
 
+h1{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+button{
+  width: 100%;
+}
+
+#btnewTec{
+  margin: 1rem 0;
+}
+
 table {
     width: 100%;
   }

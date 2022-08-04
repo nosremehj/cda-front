@@ -22,3 +22,13 @@ img {
     color: white;
     background: linear-gradient(90deg, rgba(0,151,255,1) 0%, rgba(8,131,195,1) 42%, rgba(14,94,145,1) 96%);
 }
+footer{
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(90deg, rgba(14,94,145,1) 0%, rgba(8,131,195,1) 42%, rgba(0,151,255,1) 96%);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;   
+    padding: 1rem 0; 
+}
