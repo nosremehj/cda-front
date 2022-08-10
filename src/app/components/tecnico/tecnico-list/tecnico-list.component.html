@@ -1,7 +1,7 @@
 <div class="container">
   
   <h1>Listando Técnicos</h1>
-  <button routerLink="create" class="mat-elevation-z4" id="btnewTec" mat-stroked-button color="primary">Novo técnico</button>
+  <button routerLink="create" class="mat-elevation-z4" id="btnewTec" mat-stroked-button color="primary">Cadastrar técnico</button>
 
     <mat-form-field appearance="standard">
         <mat-label>Filtro</mat-label>
@@ -37,7 +37,7 @@
               <a routerLink="update/{{ row.id }}">
                 <i class="material-icons edit">edit</i>
               </a>
-              <a routerLink="">
+              <a (click)="delete(row.id)">
                 <i class="material-icons delete">delete</i>
               </a>
             </td>

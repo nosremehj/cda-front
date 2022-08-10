@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+.button{
+    display: flex;
+    justify-content: end;
+}
+button:hover{
+    background-color: #808080;
+}

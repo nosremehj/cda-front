@@ -2,8 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogoConfirmComponent } from '../../dialogo-confirm/dialogo-confirm.component';
 
 @Component({
   selector: 'app-tecnico-list',
@@ -12,6 +16,16 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 })
 export class TecnicoListComponent implements OnInit {
   
+  tecnico: Tecnico = {
+    id: '',
+    nome: '',
+    cpf: '',
+    email: '',
+    senha: '',
+    perfis: [],
+    dataCriacao: ''
+  }
+
   TECNICO_DATA: Tecnico[] = [];
 
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
@@ -21,7 +35,10 @@ export class TecnicoListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private service: TecnicoService
+    private service: TecnicoService,
+    private toast: ToastrService,
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +63,37 @@ export class TecnicoListComponent implements OnInit {
     }
   }
 
-}
+  findById():void {
+    this.service.findById(this.tecnico.id).subscribe(resposta => {
+      resposta.perfis = []
+      this.tecnico = resposta;
+    }) 
+  }
 
+  reloadPag(uri:string){
+    this.router.navigateByUrl(`/`, {skipLocationChange: true}).then(()=>
+    this.router.navigate([uri]))
+  }
+
+  delete(id: any) {
+    const dialogoReferencia = this.dialog.open(DialogoConfirmComponent);
+    dialogoReferencia.afterClosed().subscribe( resposta=>{
+      if(resposta){
+        this.service.delete(id).subscribe(() => {
+          this.toast.success("Técnico deletado com sucesso!", 'Delete');
+          this.reloadPag(`tecnicos`)
+        }, ex => {
+          if(ex.error.errors){
+            ex.error.errors.forEach(element => {
+              this.toast.error(element.message);
+            });
+          }else{
+            this.toast.error(ex.error.message);
+          }
+        });
+      }
+    })
+    
+  }
+
+}

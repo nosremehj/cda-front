@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
@@ -38,6 +39,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { DialogoConfirmComponent } from './components/dialogo-confirm/dialogo-confirm.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +52,7 @@ import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecn
     LoginComponent,
     TecnicoCreateComponent,
     TecnicoUpdateComponent,
+    DialogoConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecn
     MatTableModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule,
     MatCardModule,
     ToastrModule.forRoot({
       timeOut:4000,
