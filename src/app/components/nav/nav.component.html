@@ -26,10 +26,14 @@
     </mat-drawer>
   
     <div class="sidenav-content">
-        <app-header></app-header>
-      <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
+        <div class="header">
+            <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="app-header">
+                <app-header></app-header>
+            </div>
+        </div>
       <router-outlet></router-outlet>
     </div>
   

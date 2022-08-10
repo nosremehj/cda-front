@@ -2,8 +2,7 @@ h1{
     text-align: center;
 }
 .button{
-    display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 button:hover{
     background-color: #808080;

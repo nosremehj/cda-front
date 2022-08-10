@@ -18,7 +18,7 @@ img {
     margin-right: .6rem;
 }
 .menu{
-    margin: 1rem auto 0 1rem;
+    margin: 2rem auto 0 1rem;
     color: white;
     background: linear-gradient(90deg, rgba(0,151,255,1) 0%, rgba(8,131,195,1) 42%, rgba(14,94,145,1) 96%);
 }
@@ -31,4 +31,10 @@ footer{
     bottom: 0;
     width: 100%;   
     padding: 1rem 0; 
+}
+.header{
+    display: flex;
+}
+.app-header{
+    width: 100%;
 }
