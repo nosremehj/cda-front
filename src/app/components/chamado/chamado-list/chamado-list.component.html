@@ -1,0 +1,78 @@
+<div class="container">
+  
+    <h1>Listando Chamados</h1>
+    <button  class="mat-elevation-z8" mat-stroked-button color="primary">Novo chamado</button>
+  
+      <mat-form-field appearance="standard">
+          <mat-label>Filtro</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Rafael" #input>
+        </mat-form-field>
+
+        <mat-radio-group color="primary">
+            <mat-radio-button (click)="orderByStatus(0)" value="0" >ABERTO</mat-radio-button>
+            <mat-radio-button (click)="orderByStatus(1)" value="1">ANDAMENTO</mat-radio-button>
+            <mat-radio-button (click)="orderByStatus(2)" value="2">ENCERRADO</mat-radio-button>
+          </mat-radio-group>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="titulo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </th>
+              <td mat-cell *matCellDef="let row"> {{row.titulo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cliente">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </th>
+              <td mat-cell *matCellDef="let row"> {{row.nomeCliente}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="tecnico">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Técnico </th>
+                <td mat-cell *matCellDef="let row"> {{row.nomeTecnico}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="dataAbertura">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Data de Abertura </th>
+                <td mat-cell *matCellDef="let row"> {{row.dataAbertura}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="prioridade">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Prioridade </th>
+                <td mat-cell *matCellDef="let row"> {{retornaPrioridade(row.prioridade)}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+              <td mat-cell *matCellDef="let row"> {{retornaStatus(row.status)}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="acoes">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+              <td mat-cell *matCellDef="let row">
+                <a routerLink="">
+                  <i class="material-icons edit">edit</i>
+                </a>
+                <a>
+                  <i class="material-icons delete">visibility</i>
+                </a>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Nenhum dado foi encontrado correspondente ao filtro "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione a página"></mat-paginator>
+        </div>
+        
+  </div>

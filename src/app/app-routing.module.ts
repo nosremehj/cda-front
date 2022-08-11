@@ -10,6 +10,7 @@ import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecn
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,9 @@ const routes: Routes = [
       //Rotas de técnico
       {path: 'clientes', component: ClienteListComponent},
       {path: 'clientes/create', component: ClienteCreateComponent},
-      {path: 'clientes/update/:id', component: ClienteUpdateComponent}
+      {path: 'clientes/update/:id', component: ClienteUpdateComponent},
+      //Rotas do chamado
+      {path: 'chamados', component: ChamadoListComponent}
   ]
   },
 ];
