@@ -15,12 +15,12 @@ export class NavComponent implements OnInit {
     private toast: ToastrService) { }
 
   ngOnInit(): void {
-    this.router.navigate(['chamados'])
+    this.router.navigate(['home']);
   }
 
   logout(){
     this.authService.logout();
-    this.router.navigate(['login'])
-    this.toast.info('Logout realizado com sucesso','Logout', {timeOut: 7000})
+    this.router.navigate(['login']);
+    this.toast.info('Logout realizado com sucesso','Logout', {timeOut: 7000});
   }
 }
