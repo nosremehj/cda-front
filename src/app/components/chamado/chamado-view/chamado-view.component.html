@@ -1,63 +1,57 @@
 <div class="container mat-elevation-z8">
-    <h1 class="full-width" >Atualizando chamado</h1>
+    <h1 class="full-width" >Leitura do chamado</h1>
     <img class="full-width" src="assets/img/chamado-create.svg" alt="Chamado image">
 
     <form class="form">
-        <mat-form-field class="full-width" appearance="legacy">
+        <mat-form-field class="full-width" appearance="outline">
           <mat-label>Título do chamado</mat-label>
           <input
+            [disabled]="true"
             [(ngModel)]="chamado.titulo"
             name="titulo"
-            [formControl]="titulo"
-            required 
-            matInput 
-            placeholder="Ex. Trocar tonner da impressora">
+            matInput>
         </mat-form-field>
     </form>
     <div class="tecnico">
-        <mat-form-field class="full-width" appearance="legacy">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Técnico ({{ chamado.nomeTecnico }})</mat-label>
             <mat-select 
+            [disabled]="true"
             [(ngModel)]="chamado.tecnico"
-            name="tecnico"
-            [formControl]="tecnico" 
-            required>
-                <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{tec.nome}}</mat-option>
+            name="tecnico">
+                <mat-option >{{chamado.nomeTecnico}}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
     <div class="cliente">
-        <mat-form-field class="full-width" appearance="legacy">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Cliente ({{ chamado.nomeCliente}})</mat-label>
             <mat-select 
+            [disabled]="true"
             [(ngModel)]="chamado.cliente"
-            name="cliente"
-            [formControl]="cliente" 
-            required>
-                <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{cli.nome}}</mat-option>
+            name="cliente">
+                <mat-option >{{chamado.nomeCliente}}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
     <div class="status-prioridade">
-        <mat-form-field appearance="legacy">
+        <mat-form-field appearance="outline">
             <mat-label>Status ({{retornaStatus(chamado.status)}})</mat-label>
             <mat-select 
+            [disabled]="true"
             [(ngModel)]="chamado.status"
-            name="status"
-            [formControl]="status" 
-            required>
+            name="status">
                 <mat-option value="0">Aberto</mat-option>
                 <mat-option value="1">Em andamento</mat-option>
                 <mat-option value="2">Encerrado</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="legacy">
+        <mat-form-field appearance="outline">
             <mat-label>Prioridade ({{retornaPrioridade(chamado.prioridade)}})</mat-label>
             <mat-select 
+            [disabled]="true"
             [(ngModel)]="chamado.prioridade"
-            name="prioridade"
-            [formControl]="prioridade" 
-            required>
+            name="prioridade">
                 <mat-option value="0">Baixa</mat-option>
                 <mat-option value="1">Média</mat-option>
                 <mat-option value="2">Alta</mat-option>
@@ -66,20 +60,16 @@
     </div>
 
     <form class="form">
-        <mat-form-field class="full-width" appearance="legacy">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Informe uma descrição</mat-label>
             <textarea 
+                [disabled]="true"
                 [(ngModel)]="chamado.observacoes"
                 name="observacoes"
-                [formControl]="observacoes" 
-                required
                 class="observacoes"
-                matInput 
-                placeholder="Ex. Trocar tonner da impressora, pois a mesma está imprimindo com falhas...">
+                matInput>
             </textarea>
         </mat-form-field>
     </form>
-    
-    <button (click)="update()" [disabled]="!validaCampos()" class="full-width"  mat-raised-button color="primary">Atualizar</button>
-    <button routerLink="../../" class="full-width" mat-raised-button color="warn">Cancelar</button>
+    <button routerLink="../../" class="full-width" mat-raised-button color="warn">Retornar</button>
 </div>
