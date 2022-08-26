@@ -28,7 +28,8 @@ instalação de dependências. Após a conclusão execute **"ng serve"** para um
 
 
 ## Cloud
-Link para consumo no front-end:
+Link para visualização da aplicação:
+**Vercel**
 [Central de ajuda](https://cda-front.vercel.app/)
 
 Usuário para teste:
