@@ -1,27 +1,41 @@
-# Cda
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+# Central de Ajuda
 
-## Development server
+Este projeto foi desenvolvido para aquisição de experiências com a 
+utilização do Angular, visando o desenvolvimento de um help-desk. Consumindo uma API
+REST que foi desenvolvida em Java e hospedada no Heroku. E após a conclusão da aplicação
+web, sendo hospedada no Cloud (Vercel) para a visualização.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Rodando Localmente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone o projeto e após abrir o diretório, abra o terminal e execute **"npm i"** para 
+instalação de dependências. Após a conclusão execute **"ng serve"** para um servidor dev.
+ Navegue até http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Stack utilizada
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Front-end:** Typescript, Angular
 
-## Running end-to-end tests
+**Back-end:** Java, Spring Boot
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Autores
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [@Jhemerson](https://github.com/nosremehj)
+
+
+## Cloud
+Link para consumo no front-end:
+[Central de ajuda](https://cda-front.vercel.app/)
+
+Usuário para teste:
+- **Email:** usuariotest@mail.com
+- **Senha:** 123456
+
+**Lembrete:** Por conta de estar sendo hospedado no heroku, pode haver um pequeno atraso
+no login por fins da API não rodar 24/7. 
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jhemerson)
