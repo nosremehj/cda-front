@@ -34,7 +34,7 @@ Link para visualização da aplicação:
 
 Usuário para teste:
 - **Email:** usuariotest@mail.com
-- **Senha:** 123456
+- **Senha:** 1234
 
 **Lembrete:** Por conta de estar sendo hospedado no heroku, pode haver um pequeno atraso
 no login por fins da API não rodar 24/7. 
