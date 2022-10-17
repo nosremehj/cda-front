@@ -9,8 +9,8 @@ web, sendo hospedada no Cloud (Vercel) para a visualização.
 
 # Rodando Localmente
 
-Clone o projeto e após abrir o diretório, abra o terminal e execute **"npm i"** para 
-instalação de dependências. Após a conclusão execute **"ng serve"** para um servidor dev.
+Clone o projeto e após abrir o diretório, abra o terminal, execute "npm i @angular/cli@12.0.3" para instalar o angular e após isso **"npm i"** para 
+instalação de dependências. Após a conclusão execute **"ng serve"** para rodar um servidor dev.
  Navegue até http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 
